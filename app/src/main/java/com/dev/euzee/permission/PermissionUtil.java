@@ -1,4 +1,4 @@
-package permissions.euzee.com.permissionutil;
+package com.dev.euzee.permission;
 
 import android.content.Context;
 

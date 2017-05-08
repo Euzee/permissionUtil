@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
-group = 'dev.euzee.com.permissionutil'
+group = 'com.dev.euzee'
 version = '1.0'
 
 uploadArchives {

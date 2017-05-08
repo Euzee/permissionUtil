@@ -1,4 +1,4 @@
-package permissions.euzee.com.permissionutil;
+package com.dev.euzee.permission;
 
 class PermissionWrapper implements PermissionCallback {
     private PermissionCallback callback;
