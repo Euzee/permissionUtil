@@ -35,7 +35,7 @@ Or you can request multiple permissions with your group :
 PermissionUtil.checkGroup(context, requestPermissionListener,new String[]{Manifest.permission.READ_PHONE_STATE});
 ```
 
-List of permissions that could be requested according to https://developer.android.com/guide/topics/permissions/requesting.html#normal-dangerous : 
+List of permissions that could be requested according to [Dangerous permissions](https://developer.android.com/guide/topics/permissions/requesting.html#normal-dangerous) : 
 - contactsRead
 - contactsWrite
 - contactsRW
