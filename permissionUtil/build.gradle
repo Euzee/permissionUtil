@@ -1,3 +1,27 @@
+ext {
+    bintrayRepo = 'Libs'
+    bintrayName = 'permissionUtil'
+
+    publishedGroupId = 'com.github.euzee'
+    libraryName = 'permissionUtil'
+    artifact = 'permissionUtil'
+
+    libraryDescription = 'Simple android util to request runtime permissions.'
+
+    siteUrl = 'https://github.com/Euzee/permissionUtil'
+    gitUrl = 'https://github.com/Euzee/permissionUtil.git'
+
+    libraryVersion = '1.0.1'
+
+    developerId = 'Euzee'
+    developerName = 'Euzee'
+    developerEmail = 'www.dimuha@mail.ru'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 apply plugin: 'com.android.library'
 
 android {
@@ -8,7 +32,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0.1"
+        versionName libraryVersion
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -27,3 +51,13 @@ dependencies {
     compile "com.android.support:support-v13:$SUPPORT_LIBRARY_VERSION"
     compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
 }
+apply from: 'install.gradle'
+apply from: 'bintray.gradle'
+
+task prepareApplicationProperties {
+    File file = new File('README.md')
+    String fileContents = file.getText('UTF-8')
+    fileContents = fileContents.replaceAll("permissionUtil:\\d{1,}.\\d{1,}.\\d{1,}", "permissionUtil:" + libraryVersion)
+    file.write(fileContents)
+}
+tasks.preBuild.dependsOn 'prepareApplicationProperties'

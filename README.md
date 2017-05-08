@@ -94,14 +94,14 @@ supportLibraryVersion=YOUR_SUPPORT_VERSION
 repositories {
     maven { url  "http://dl.bintray.com/euzee/Libs" }
 }
-compile 'com.github.euzee:permissionUtil:1.0.0'
+compile 'com.github.euzee:permissionUtil:1.0.1'
 ```
 [![](https://jitpack.io/v/Euzee/permissionUtil.svg)](https://jitpack.io/#Euzee/permissionUtil)
 ``` groovy
 repositories {
     maven { url 'https://jitpack.io' }
 }
-compile 'com.github.Euzee:permissionUtil:1.0.0'
+compile 'com.github.Euzee:permissionUtil:1.0.1'
 ```
 
 # License
