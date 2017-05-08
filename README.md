@@ -80,6 +80,7 @@ repositories {
 }
 compile 'com.github.euzee:permissionUtil:1.0.0'
 ```
+
 # License
 
     Copyright 2017 Euzee, Inc.
