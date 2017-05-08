@@ -80,7 +80,7 @@ compile 'com.github.euzee:permissionUtil:1.0.0'
 ```
 #License
 
-    Copyright 2017 florent37, Inc.
+    Copyright 2017 Euzee, Inc.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
