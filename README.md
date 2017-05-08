@@ -3,14 +3,15 @@ A simple easy-to-use permission helper for Android.
 No need to handle result in onActivityResult and passing it to fragment or model.
 PermissionUtil can be used from any place with context only (Activity, Fragment,ViewModel).
 
-```java
+``` java
 //Easy to use
 PermissionUtil.locationBoth(context, requestPermissionListener);
 ```
+
 ## Callback
 
 Simplified callback. Just override method that you need and that's it.
-```java
+``` java
 public abstract class ShortPerCallback implements PermissionCallback {
 
     @Override
@@ -26,12 +27,13 @@ public abstract class ShortPerCallback implements PermissionCallback {
 ## Actions
 
 You can directly use prepared requests like :
-```java
+``` java
 PermissionUtil.locationFine(context, requestPermissionListener);
 PermissionUtil.locationCoarse(context, requestPermissionListener);
 ```
+
 Or you can request multiple permissions with your group :
-```java
+``` java
 PermissionUtil.checkGroup(context, requestPermissionListener,new String[]{Manifest.permission.READ_PHONE_STATE});
 ```
 
@@ -70,7 +72,7 @@ List of permissions that could be requested according to [Dangerous permissions]
 # Download
 
 In your module [ ![Download](https://api.bintray.com/packages/euzee/Libs/permissionUtil/images/download.svg) ](https://bintray.com/euzee/Libs/permissionUtil/_latestVersion)
-```groovy
+``` groovy
 repositories {
     maven {
         url  "http://dl.bintray.com/euzee/Libs" 
@@ -78,7 +80,7 @@ repositories {
 }
 compile 'com.github.euzee:permissionUtil:1.0.0'
 ```
-#License
+# License
 
     Copyright 2017 Euzee, Inc.
 
