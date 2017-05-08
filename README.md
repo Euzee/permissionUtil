@@ -71,6 +71,22 @@ List of permissions that could be requested according to [Dangerous permissions]
 - smsAll
 - checkGroup
 
+# Dependencies
+This library using :
+``` groovy
+dependencies {
+    def SUPPORT_LIBRARY_VERSION = '25.3.1'
+    if (getRootProject().hasProperty("supportLibraryVersion"))
+        SUPPORT_LIBRARY_VERSION = getRootProject().getProperties().get("supportLibraryVersion");
+    compile "com.android.support:support-v13:$SUPPORT_LIBRARY_VERSION"
+    compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
+}
+```
+If you want to avoid conflicts in dependencies add `supportLibraryVersion` to `gradle.properties` :
+``` groovy
+supportLibraryVersion=YOUR_SUPPORT_VERSION
+```
+
 # Download
 
 [ ![Download](https://api.bintray.com/packages/euzee/Libs/permissionUtil/images/download.svg) ](https://bintray.com/euzee/Libs/permissionUtil/_latestVersion)
