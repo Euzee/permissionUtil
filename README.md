@@ -1,4 +1,5 @@
-[![GitHub license](https://img.shields.io/github/license/dcendents/android-maven-gradle-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![GitHub license](https://img.shields.io/github/license/dcendents/android-maven-gradle-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html) [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) [![CircleCI](https://circleci.com/gh/Euzee/permissionUtil/tree/master.svg?style=svg)](https://circleci.com/gh/Euzee/permissionUtil/tree/master)
+
 # permissionUtil
 A simple easy-to-use permission helper for Android. 
 No need to handle result in onActivityResult and passing it to fragment or model.
@@ -72,7 +73,7 @@ List of permissions that could be requested according to [Dangerous permissions]
 
 # Download
 
-In your module [ ![Download](https://api.bintray.com/packages/euzee/Libs/permissionUtil/images/download.svg) ](https://bintray.com/euzee/Libs/permissionUtil/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/euzee/Libs/permissionUtil/images/download.svg) ](https://bintray.com/euzee/Libs/permissionUtil/_latestVersion)
 ``` groovy
 repositories {
     maven { url  "http://dl.bintray.com/euzee/Libs" }
