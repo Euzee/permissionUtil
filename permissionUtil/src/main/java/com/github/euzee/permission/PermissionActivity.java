@@ -1,4 +1,4 @@
-package com.dev.euzee.permission;
+package com.github.euzee.permission;
 
 import android.Manifest;
 import android.app.Activity;

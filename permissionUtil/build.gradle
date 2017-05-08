@@ -1,14 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
-
-group = 'com.dev.euzee'
-version = '1.0'
-
-uploadArchives {
-    repositories {
-        mavenLocal()
-    }
-}
 
 android {
     compileSdkVersion 25

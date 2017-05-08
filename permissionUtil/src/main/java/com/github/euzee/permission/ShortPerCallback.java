@@ -1,4 +1,4 @@
-package com.dev.euzee.permission;
+package com.github.euzee.permission;
 
 public abstract class ShortPerCallback implements PermissionCallback {
 
