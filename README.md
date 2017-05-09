@@ -78,13 +78,10 @@ List of permissions that could be requested according to [Dangerous permissions]
 ``` groovy
 repositories {
     // yo can use 
-    mavenCentral()
-    //or
-    jcenter()
-    //or direct link to repository
-    maven { url  "http://dl.bintray.com/euzee/Libs" }
-    //or jitpack
-    maven { url 'https://jitpack.io' }
+    mavenCentral() // or jcenter()
+    
+    //or direct link to repository or jitpack
+    maven { url  "http://dl.bintray.com/euzee/Libs" } // or maven { url "https://jitpack.io" }
 }
 compile 'com.github.euzee:permissionUtil:1.0.1'
 ```
