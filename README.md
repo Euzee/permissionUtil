@@ -1,4 +1,4 @@
-[![GitHub license](https://img.shields.io/github/license/dcendents/android-maven-gradle-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html) [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) [![CircleCI](https://circleci.com/gh/Euzee/permissionUtil/tree/master.svg?style=svg)](https://circleci.com/gh/Euzee/permissionUtil/tree/master)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-permissionUtil-blue.svg?style=flat)](https://android-arsenal.com/details/1/5721) [![GitHub license](https://img.shields.io/github/license/dcendents/android-maven-gradle-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html) [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) [![CircleCI](https://circleci.com/gh/Euzee/permissionUtil/tree/master.svg?style=svg)](https://circleci.com/gh/Euzee/permissionUtil/tree/master)
 
 # permissionUtil
 A simple easy-to-use permission helper for Android. 
@@ -73,19 +73,9 @@ List of permissions that could be requested according to [Dangerous permissions]
 
 # Download
 
-[ ![Download](https://api.bintray.com/packages/euzee/Libs/permissionUtil/images/download.svg) ](https://bintray.com/euzee/Libs/permissionUtil/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/euzee/Libs/permissionUtil/images/download.svg) ](https://bintray.com/euzee/Libs/permissionUtil/_latestVersion) [![](https://jitpack.io/v/Euzee/permissionUtil.svg)](https://jitpack.io/#Euzee/permissionUtil)
 ``` groovy
-repositories {
-    maven { url  "http://dl.bintray.com/euzee/Libs" }
-}
 compile 'com.github.euzee:permissionUtil:1.0.1'
-```
-[![](https://jitpack.io/v/Euzee/permissionUtil.svg)](https://jitpack.io/#Euzee/permissionUtil)
-``` groovy
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-compile 'com.github.Euzee:permissionUtil:1.0.1'
 ```
 
 # License
