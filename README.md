@@ -74,7 +74,18 @@ List of permissions that could be requested according to [Dangerous permissions]
 # Download
 
 [ ![Download](https://api.bintray.com/packages/euzee/Libs/permissionUtil/images/download.svg) ](https://bintray.com/euzee/Libs/permissionUtil/_latestVersion) [![](https://jitpack.io/v/Euzee/permissionUtil.svg)](https://jitpack.io/#Euzee/permissionUtil)
+
 ``` groovy
+repositories {
+    // yo can use 
+    mavenCentral()
+    //or
+    jcenter()
+    //or direct link to repository
+    maven { url  "http://dl.bintray.com/euzee/Libs" }
+    //or jitpack
+    maven { url 'https://jitpack.io' }
+}
 compile 'com.github.euzee:permissionUtil:1.0.1'
 ```
 
