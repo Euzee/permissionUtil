@@ -83,7 +83,7 @@ repositories {
     //or direct link to repository or jitpack
     maven { url  "http://dl.bintray.com/euzee/Libs" } // or maven { url "https://jitpack.io" }
 }
-compile 'com.github.euzee:permissionUtil:1.0.1'
+compile 'com.github.euzee:permissionUtil:1.0.2'
 ```
 
 # License

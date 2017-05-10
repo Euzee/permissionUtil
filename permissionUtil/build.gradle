@@ -11,7 +11,7 @@ ext {
     siteUrl = 'https://github.com/Euzee/permissionUtil'
     gitUrl = 'https://github.com/Euzee/permissionUtil.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'Euzee'
     developerName = 'Euzee'
@@ -26,7 +26,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         minSdkVersion 16
