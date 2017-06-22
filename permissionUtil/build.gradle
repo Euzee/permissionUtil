@@ -11,7 +11,7 @@ ext {
     siteUrl = 'https://github.com/Euzee/permissionUtil'
     gitUrl = 'https://github.com/Euzee/permissionUtil.git'
 
-    libraryVersion = '1.0.2'
+    libraryVersion = '1.0.3'
 
     developerId = 'Euzee'
     developerName = 'Euzee'

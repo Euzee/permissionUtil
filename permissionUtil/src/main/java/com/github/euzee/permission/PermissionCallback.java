@@ -1,6 +1,6 @@
 package com.github.euzee.permission;
 
-interface PermissionCallback {
+public interface PermissionCallback {
 
     void onPermissionGranted();
 
