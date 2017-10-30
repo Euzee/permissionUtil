@@ -3,12 +3,15 @@ package com.github.euzee.permission;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v13.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.view.WindowManager;
 
 @SuppressWarnings("unused")
@@ -157,13 +160,46 @@ public class PermissionActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        String[] requestedPermissions = getRequestedPermissions();
+        final String[] requestedPermissions = getRequestedPermissions();
         if (checkIsEmptyPermissions(requestedPermissions)) {
-            int result = checkPermissions(requestedPermissions);
-            requestPermissionsIfNeeded(result, requestedPermissions);
+            final int result = checkPermissions(requestedPermissions);
+            boolean rationale = checkRationale(requestedPermissions);
+            if (rationale && isRationaleExist()) {
+                showRationale((dialogInterface, i) -> requestPermissionsIfNeeded(result, requestedPermissions));
+            } else {
+                requestPermissionsIfNeeded(result, requestedPermissions);
+            }
         } else {
             onPermissionDenied();
         }
+    }
+
+    private boolean isRationaleExist() {
+        PermissionCallback callback = PermissionUtil.getCallback();
+        return callback != null && !TextUtils.isEmpty(callback.getRationaleMessage());
+    }
+
+    private void showRationale(DialogInterface.OnClickListener listener) {
+        PermissionCallback callback = PermissionUtil.getCallback();
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle(callback.getRationaleTitle())
+                .setMessage(callback.getRationaleMessage())
+                .setPositiveButton(android.R.string.ok, listener)
+                .create();
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+    }
+
+    private boolean checkRationale(String[] requestedPermissions) {
+        boolean result = false;
+        for (String permission : requestedPermissions) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
 
     private String[] getRequestedPermissions() {
@@ -208,6 +244,13 @@ public class PermissionActivity extends Activity {
         }
         finish();
     }
+
+    private void onShowRationale() {
+        if (PermissionUtil.getCallback() != null) {
+            PermissionUtil.getCallback().getRationaleMessage();
+        }
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,

@@ -1,8 +1,17 @@
 package com.github.euzee.permission;
 
-public interface PermissionCallback {
+@SuppressWarnings("WeakerAccess")
+public abstract class PermissionCallback {
 
-    void onPermissionGranted();
+    abstract void onPermissionGranted();
 
-    void onPermissionDenied();
+    abstract void onPermissionDenied();
+
+    String getRationaleTitle() {
+        return "";
+    }
+
+    String getRationaleMessage() {
+        return "";
+    }
 }

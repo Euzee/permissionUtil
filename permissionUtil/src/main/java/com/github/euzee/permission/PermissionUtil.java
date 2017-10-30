@@ -2,6 +2,7 @@ package com.github.euzee.permission;
 
 import android.content.Context;
 
+@SuppressWarnings("unused")
 public class PermissionUtil {
 
     private static PermissionUtil instance;
@@ -167,6 +168,10 @@ public class PermissionUtil {
         return getInstance().callback;
     }
 
+    private void setCallback(PermissionCallback callback) {
+        this.callback = callback;
+    }
+
     static void onCallbackReady() {
         getInstance().setCallback(null);
     }
@@ -177,9 +182,5 @@ public class PermissionUtil {
 
     private PermissionCallback wrap(PermissionCallback callback) {
         return new PermissionWrapper(callback);
-    }
-
-    private void setCallback(PermissionCallback callback) {
-        this.callback = callback;
     }
 }
