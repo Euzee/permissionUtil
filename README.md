@@ -14,6 +14,15 @@ PermissionUtil.locationBoth(context, requestPermissionListener);
 
 ## Callback
 
+Added new `CallbackBuilder` so now you can build `PermissionCallback` with or without granted or denied calls. Also you can set resources for rationale explanation.
+``` java
+new CallbackBuilder()
+                .onGranted(()->yourGrantedCall())
+                .onDenied(()->yourDeniedCall())
+                .withRationale(titleId,messageId)
+                .build();
+```
+
 Simplified callback. Just override method that you need and that's it.
 ``` java
 public abstract class ShortPerCallback implements PermissionCallback {
@@ -25,7 +34,23 @@ public abstract class ShortPerCallback implements PermissionCallback {
     @Override
     public void onPermissionDenied() {
     }
+   
 }
+```
+
+If you need to show rationale explanation - you may use `CallbackBuilder` or you need to override `getRationaleTitleId()` and `getRationaleMessageId()` of `PermissionCallback` class if you don't wan't to use builder . Dialog won't be shown if `getRationaleMessageId()` will return `0`.
+
+``` java
+    // default implementation 
+    
+    int getRationaleTitleId() {
+        return 0;
+    }
+    
+    int getRationaleMessageId() {
+        return 0;
+    }
+
 ```
 
 ## Actions
