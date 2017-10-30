@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v13.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
-import android.text.TextUtils;
 import android.view.WindowManager;
 
 @SuppressWarnings("unused")
@@ -176,19 +175,29 @@ public class PermissionActivity extends Activity {
 
     private boolean isRationaleExist() {
         PermissionCallback callback = PermissionUtil.getCallback();
-        return callback != null && !TextUtils.isEmpty(callback.getRationaleMessage());
+        return callback != null && callback.getRationaleMessageId() != 0;
     }
 
     private void showRationale(DialogInterface.OnClickListener listener) {
         PermissionCallback callback = PermissionUtil.getCallback();
+        String title = getCallbackTitle(callback);
+        String message = getCallbackMessage(callback);
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle(callback.getRationaleTitle())
-                .setMessage(callback.getRationaleMessage())
+                .setTitle(title)
+                .setMessage(message)
                 .setPositiveButton(android.R.string.ok, listener)
                 .create();
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
+    }
+
+    private String getCallbackTitle(PermissionCallback callback) {
+        return callback.getRationaleTitleId() == 0 ? "" : getString(callback.getRationaleTitleId());
+    }
+
+    private String getCallbackMessage(PermissionCallback callback) {
+        return callback.getRationaleMessageId() == 0 ? "" : getString(callback.getRationaleMessageId());
     }
 
     private boolean checkRationale(String[] requestedPermissions) {
@@ -247,7 +256,7 @@ public class PermissionActivity extends Activity {
 
     private void onShowRationale() {
         if (PermissionUtil.getCallback() != null) {
-            PermissionUtil.getCallback().getRationaleMessage();
+            PermissionUtil.getCallback().getRationaleMessageId();
         }
     }
 

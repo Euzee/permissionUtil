@@ -20,12 +20,12 @@ class PermissionWrapper extends PermissionCallback {
     }
 
     @Override
-    String getRationaleTitle() {
-        return callback.getRationaleTitle();
+    int getRationaleTitleId() {
+        return callback.getRationaleTitleId();
     }
 
     @Override
-    String getRationaleMessage() {
-        return callback.getRationaleMessage();
+    int getRationaleMessageId() {
+        return callback.getRationaleMessageId();
     }
 }

@@ -7,11 +7,11 @@ public abstract class PermissionCallback {
 
     abstract void onPermissionDenied();
 
-    String getRationaleTitle() {
-        return "";
+    int getRationaleTitleId() {
+        return 0;
     }
 
-    String getRationaleMessage() {
-        return "";
+    int getRationaleMessageId() {
+        return 0;
     }
 }
