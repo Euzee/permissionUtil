@@ -182,7 +182,7 @@ public class PermissionActivity extends Activity {
         PermissionCallback callback = PermissionUtil.getCallback();
         String title = getCallbackTitle(callback);
         String message = getCallbackMessage(callback);
-        AlertDialog dialog = new AlertDialog.Builder(this)
+        AlertDialog dialog = new AlertDialog.Builder(this,R.style.Theme_AppCompat)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, listener)
