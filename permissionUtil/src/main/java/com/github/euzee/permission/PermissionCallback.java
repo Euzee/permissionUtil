@@ -3,15 +3,15 @@ package com.github.euzee.permission;
 @SuppressWarnings("WeakerAccess")
 public abstract class PermissionCallback {
 
-    abstract void onPermissionGranted();
+    public abstract void onPermissionGranted();
 
-    abstract void onPermissionDenied();
+    public abstract void onPermissionDenied();
 
-    int getRationaleTitleId() {
+    public int getRationaleTitleId() {
         return 0;
     }
 
-    int getRationaleMessageId() {
+    public int getRationaleMessageId() {
         return 0;
     }
 }
