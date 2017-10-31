@@ -1,6 +1,6 @@
 package com.github.euzee.permission;
 
-interface PermissionGranted {
+public interface PermissionGranted {
 
     void onPermissionGranted();
 }
