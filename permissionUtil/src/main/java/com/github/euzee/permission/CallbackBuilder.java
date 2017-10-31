@@ -29,24 +29,24 @@ public class CallbackBuilder {
     public PermissionCallback build() {
         return new PermissionCallback() {
             @Override
-            void onPermissionGranted() {
+            public void onPermissionGranted() {
                 if (granted != null)
                     granted.onPermissionGranted();
             }
 
             @Override
-            void onPermissionDenied() {
+            public void onPermissionDenied() {
                 if (denied != null)
                     denied.onPermissionDenied();
             }
 
             @Override
-            int getRationaleTitleId() {
+            public int getRationaleTitleId() {
                 return titleId;
             }
 
             @Override
-            int getRationaleMessageId() {
+            public int getRationaleMessageId() {
                 return messageId;
             }
         };
