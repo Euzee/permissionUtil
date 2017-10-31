@@ -1,6 +1,6 @@
 package com.github.euzee.permission;
 
-class PermissionWrapper implements PermissionCallback {
+class PermissionWrapper extends PermissionCallback {
     private PermissionCallback callback;
 
     PermissionWrapper(PermissionCallback callback) {
@@ -17,5 +17,15 @@ class PermissionWrapper implements PermissionCallback {
     public void onPermissionDenied() {
         PermissionUtil.onCallbackReady();
         callback.onPermissionDenied();
+    }
+
+    @Override
+    public int getRationaleTitleId() {
+        return callback.getRationaleTitleId();
+    }
+
+    @Override
+    public int getRationaleMessageId() {
+        return callback.getRationaleMessageId();
     }
 }
