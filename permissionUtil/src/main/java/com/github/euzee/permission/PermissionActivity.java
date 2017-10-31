@@ -164,7 +164,7 @@ public class PermissionActivity extends Activity {
             final int result = checkPermissions(requestedPermissions);
             boolean rationale = checkRationale(requestedPermissions);
             if (rationale && isRationaleExist()) {
-                showRationale((dialogInterface, i) -> requestPermissionsIfNeeded(result, requestedPermissions));
+                showRationale((dialogInterface) -> requestPermissionsIfNeeded(result, requestedPermissions));
             } else {
                 requestPermissionsIfNeeded(result, requestedPermissions);
             }
@@ -178,17 +178,16 @@ public class PermissionActivity extends Activity {
         return callback != null && callback.getRationaleMessageId() != 0;
     }
 
-    private void showRationale(DialogInterface.OnClickListener listener) {
+    private void showRationale(DialogInterface.OnDismissListener listener) {
         PermissionCallback callback = PermissionUtil.getCallback();
         String title = getCallbackTitle(callback);
         String message = getCallbackMessage(callback);
         AlertDialog dialog = new AlertDialog.Builder(this,R.style.Theme_AppCompat_Light_Dialog_MinWidth)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(android.R.string.ok, listener)
+                .setPositiveButton(android.R.string.ok, null)
+                .setOnDismissListener(listener)
                 .create();
-        dialog.setCancelable(false);
-        dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
 
