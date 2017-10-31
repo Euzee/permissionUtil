@@ -10,23 +10,23 @@ public class CallbackBuilder {
     public CallbackBuilder() {
     }
 
-    CallbackBuilder onGranted(PermissionGranted call) {
+    public CallbackBuilder onGranted(PermissionGranted call) {
         granted = call;
         return this;
     }
 
-    CallbackBuilder onDenied(PermissionDenied call) {
+    public CallbackBuilder onDenied(PermissionDenied call) {
         denied = call;
         return this;
     }
 
-    CallbackBuilder withRationale(int titleResId, int messageResId) {
+    public CallbackBuilder withRationale(int titleResId, int messageResId) {
         titleId = titleResId;
         messageId = messageResId;
         return this;
     }
 
-    PermissionCallback build() {
+    public PermissionCallback build() {
         return new PermissionCallback() {
             @Override
             void onPermissionGranted() {
