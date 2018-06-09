@@ -1,13 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.github.euzee.permission">
 
-    <application
-        android:allowBackup="false"
-        android:fullBackupContent="false"
-        android:supportsRtl="true"
-        tools:ignore="GoogleAppIndexingWarning">
+    <application>
 
         <activity
             android:name=".PermissionActivity"
