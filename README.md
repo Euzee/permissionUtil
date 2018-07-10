@@ -111,7 +111,7 @@ repositories {
     maven { url  "http://dl.bintray.com/euzee/Libs" } // or maven { url "https://jitpack.io" }
 }
 (with gradle plugin less then v3 use 'compile' instead of implementation) 
-implementation 'com.github.euzee:permissionUtil:1.0.6'
+implementation 'com.github.euzee:permissionUtil:1.0.7'
 ```
 
 # License
