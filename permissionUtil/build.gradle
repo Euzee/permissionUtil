@@ -11,7 +11,7 @@ ext {
     siteUrl = 'https://github.com/Euzee/permissionUtil'
     gitUrl = 'https://github.com/Euzee/permissionUtil.git'
 
-    libraryVersion = '1.0.6'
+    libraryVersion = '1.0.7'
 
     developerId = 'Euzee'
     developerName = 'Euzee'
@@ -62,7 +62,6 @@ android {
 dependencies {
     def SUPPORT_LIBRARY_VERSION = '27.1.1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.android.support:support-v13:$SUPPORT_LIBRARY_VERSION"
     implementation "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
 }
 apply from: 'install.gradle'
